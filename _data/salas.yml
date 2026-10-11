@@ -17,6 +17,10 @@
   imagen: hongos.png
   texto: Las hojas de las expediciones se convierten en hongo, y el hongo en comida.
 
+- nombre: Cámara del Festín
+  imagen: festin.png
+  texto: Aquí se devora. Una obrera se come a otra hormiga o a una presa y se queda con sus genes… o con una tara.
+
 - nombre: Zona por excavar
   imagen: zona-vacia.png
   texto: Tierra, arcilla o roca. Cuanto más hondo, más cuesta excavar.

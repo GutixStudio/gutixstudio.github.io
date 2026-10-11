@@ -238,7 +238,6 @@ p { margin: 0 0 1em; }
   display: grid; grid-template-columns: repeat(6, 1fr); gap: 2.5rem 1.8rem;
 }
 .galeria__item { grid-column: span 2; color: #fff; text-align: center; }
-.galeria__item:nth-child(4) { grid-column: 2 / span 2; }
 .galeria__item p { font-size: .95rem; margin: .6rem auto 0; max-width: 30ch; text-shadow: 0 1px 0 rgba(0,0,0,.35); }
 .galeria__boton {
   display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; color: inherit; font: inherit;
@@ -358,8 +357,7 @@ p { margin: 0 0 1em; }
   .genes { grid-template-columns: 1fr; }
   .equipo { grid-template-columns: 1fr 1fr; }
   .galeria { grid-template-columns: 1fr 1fr; }
-  .galeria__item, .galeria__item:nth-child(4) { grid-column: auto; }
-  .galeria__item:last-child { grid-column: 1 / -1; max-width: 50%; justify-self: center; }
+  .galeria__item { grid-column: auto; }
 }
 
 @media (max-width: 760px) {
@@ -384,7 +382,6 @@ p { margin: 0 0 1em; }
   .ficha { grid-template-columns: 1fr 1fr; }
   .equipo { grid-template-columns: 1fr; }
   .galeria { grid-template-columns: 1fr; }
-  .galeria__item:last-child { max-width: none; }
   .diario a { grid-template-columns: 1fr; }
   .diario time { grid-row: auto; }
   .suelo { margin-top: 1rem; }
