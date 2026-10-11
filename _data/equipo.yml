@@ -1,0 +1,61 @@
+# Miembros del equipo. Orden = orden en la web.
+#   area:    rol principal (se ve siempre)
+#   alfa:    qué hizo en la entrega alfa (se ve al abrir la carta)
+#   color:   color de su hormiga-avatar
+#   cabeza:  forma de la cabeza → redonda | ancha | larga
+#   gen:     mutación del avatar → ninguna | mandibula | antenas | ojos
+#   enlaces: opcionales (github, portfolio, x, instagram…)
+
+- nombre: Ayoze González
+  area: Producción, arquitectura e interfaz
+  alfa: Proyecto de Unity y contratos base, escena y cámara, construcción, pantallas, HUD, GDD e integración final de la alfa.
+  color: "#B8613A"
+  cabeza: ancha
+  gen: mandibula
+  enlaces:
+    github: "https://github.com/lMayol"
+
+- nombre: Naroa Jiménez
+  area: Arte
+  alfa: Ilustraciones de las salas y de las zonas del hormiguero, e integración del arte en Unity.
+  color: "#9C6BB0"
+  cabeza: redonda
+  gen: ojos
+  enlaces:
+    github: "https://github.com/lanaroua"
+
+- nombre: Iñigo García
+  area: IA de las hormigas
+  alfa: Prefab de la hormiga, necesidades (hambre y energía), cerebro con máquina de estados jerárquica y panel de hormiga.
+  color: "#6E8B4E"
+  cabeza: larga
+  gen: antenas
+  enlaces:
+    github: "https://github.com/Inigo-GG"
+
+- nombre: Alonso Cancela
+  area: Genética y mutaciones
+  alfa: Datos de los genes, genoma de cada hormiga, Devorar en la Cámara del Festín, herencia de la reina y efectos visuales de mutación.
+  color: "#7A3E2E"
+  cabeza: ancha
+  gen: ojos
+  enlaces:
+    github: "https://github.com/Rojonso05"
+
+- nombre: Ignacio Perea
+  area: Economía y cría
+  alfa: Producción hojas → hongo → comida, la reina y la Guardería con la elección de casta.
+  color: "#C99A3B"
+  cabeza: redonda
+  gen: mandibula
+  enlaces:
+    github: "https://github.com/Althax"
+
+- nombre: Nicolás Rosón
+  area: Partida, estaciones y expediciones
+  alfa: Estaciones, invierno y fin de partida, y las expediciones con hojas y presas.
+  color: "#4F6E86"
+  cabeza: larga
+  gen: ninguna
+  enlaces:
+    github: "https://github.com/nrosm"

@@ -1,0 +1,42 @@
+# ─────────────────────────────────────────────────────────────
+#  Portfolio de Gutix · Myrmutation  (GitHub Pages + Jekyll)
+#  Casi todo el contenido se edita en _data/*.yml y _posts/*.md
+# ─────────────────────────────────────────────────────────────
+
+title: Myrmutation
+estudio: Gutix
+description: >-
+  Gestiona un hormiguero de Glotonas, hormigas que evolucionan comiéndose
+  a otras criaturas… y a sí mismas. Juego de gestión de colonia y roguelite
+  para navegador, de Gutix (URJC).
+lang: es
+
+# Si el repositorio se llama gutixstudio.github.io → baseurl vacío.
+# Si el portfolio vive en otro repositorio (p. ej. GutixStudio/portfolio) → baseurl: "/portfolio"
+url: "https://gutixstudio.github.io"
+baseurl: ""
+
+# Versión que se muestra en la portada (actualizar en cada entrega)
+version: "v0.1-alpha"
+version_nombre: "Alfa"
+
+# Enlaces. Si uno se deja vacío ("") no aparece en la web.
+enlaces:
+  itch_juego: ""                                   # COMPLETAR: página del juego en itch.io
+  itch_estudio: "https://gutix-studio.itch.io"
+  github: "https://github.com/GutixStudio"
+  codigo: "https://github.com/GutixStudio/myrmutation"
+  release: "https://github.com/GutixStudio/myrmutation/releases/tag/v0.1-alpha"
+  gdd: "https://github.com/GutixStudio/myrmutation/blob/main/docs/GDD.md"
+  x: "https://x.com/gutixstudio"
+  youtube: ""                                      # COMPLETAR: canal de YouTube
+  linktree: "https://linktr.ee/gutixstudio"
+
+# Diario de desarrollo (los posts de _posts/)
+permalink: /diario/:year/:month/:day/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - README.md

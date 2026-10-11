@@ -1,0 +1,46 @@
+{%- comment -%}
+  Cabeza de hormiga para el avatar de cada miembro.
+  Parámetros: color, cabeza (redonda | ancha | larga), gen (ninguna | mandibula | antenas | ojos)
+{%- endcomment -%}
+{%- assign c = include.color | default: "#B8613A" -%}
+{%- case include.cabeza -%}
+  {%- when "ancha" -%}{%- assign rx = 42 -%}{%- assign ry = 29 -%}
+  {%- when "larga" -%}{%- assign rx = 29 -%}{%- assign ry = 37 -%}
+  {%- else -%}{%- assign rx = 35 -%}{%- assign ry = 32 -%}
+{%- endcase -%}
+{%- assign top = 68 | minus: ry -%}
+{%- assign bot = 68 | plus: ry -%}
+<svg class="avatar" viewBox="0 0 140 140" aria-hidden="true" focusable="false">
+  <g fill="none" stroke="#2B1D14" stroke-width="4" stroke-linecap="round">
+    {%- if include.gen == "antenas" -%}
+    <path d="M58 {{ top | plus: 6 }} C48 30 30 22 18 10" stroke="#8E5FA8"/>
+    <path d="M82 {{ top | plus: 6 }} C92 30 110 22 122 10" stroke="#8E5FA8"/>
+    <path d="M40 28 l-12 4 M33 20 l-10 -1 M100 28 l12 4 M107 20 l10 -1" stroke="#8E5FA8" stroke-width="3"/>
+    {%- else -%}
+    <path d="M58 {{ top | plus: 6 }} C52 26 40 22 30 26"/>
+    <path d="M82 {{ top | plus: 6 }} C88 26 100 22 110 26"/>
+    {%- endif -%}
+  </g>
+  {%- unless include.gen == "antenas" -%}
+  <circle cx="30" cy="26" r="5" fill="{{ c }}" stroke="#2B1D14" stroke-width="3"/>
+  <circle cx="110" cy="26" r="5" fill="{{ c }}" stroke="#2B1D14" stroke-width="3"/>
+  {%- endunless -%}
+  {%- if include.gen == "mandibula" -%}
+  <path d="M56 {{ bot | minus: 6 }} q-16 10 -10 26 q4 -8 10 -6 q-2 -6 6 -12z" fill="#8E5FA8" stroke="#2B1D14" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M84 {{ bot | minus: 6 }} q16 10 10 26 q-4 -8 -10 -6 q2 -6 -6 -12z" fill="#8E5FA8" stroke="#2B1D14" stroke-width="3.5" stroke-linejoin="round"/>
+  {%- else -%}
+  <path d="M58 {{ bot | minus: 5 }} q-6 10 2 15 q1 -6 6 -8z" fill="{{ c }}" stroke="#2B1D14" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M82 {{ bot | minus: 5 }} q6 10 -2 15 q-1 -6 -6 -8z" fill="{{ c }}" stroke="#2B1D14" stroke-width="3.5" stroke-linejoin="round"/>
+  {%- endif -%}
+  <ellipse cx="70" cy="68" rx="{{ rx }}" ry="{{ ry }}" fill="{{ c }}" stroke="#2B1D14" stroke-width="4"/>
+  <ellipse cx="{{ 70 | minus: rx | plus: 16 }}" cy="{{ top | plus: 11 }}" rx="9" ry="5" fill="#fff" opacity=".35" transform="rotate(-25 {{ 70 | minus: rx | plus: 16 }} {{ top | plus: 11 }})"/>
+  <ellipse cx="56" cy="68" rx="10" ry="12" fill="#fff" stroke="#2B1D14" stroke-width="3"/>
+  <ellipse cx="84" cy="68" rx="10" ry="12" fill="#fff" stroke="#2B1D14" stroke-width="3"/>
+  <circle cx="58" cy="71" r="5" fill="#2B1D14"/>
+  <circle cx="82" cy="71" r="5" fill="#2B1D14"/>
+  {%- if include.gen == "ojos" -%}
+  <ellipse cx="70" cy="{{ top | plus: 12 }}" rx="7" ry="8" fill="#E9D7F0" stroke="#2B1D14" stroke-width="3"/>
+  <circle cx="70" cy="{{ top | plus: 13 }}" r="3.5" fill="#8E5FA8"/>
+  {%- endif -%}
+  <path d="M63 {{ bot | minus: 12 }} q7 5 14 0" fill="none" stroke="#2B1D14" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,15 @@
+# Bucle de juego (en orden)
+- titulo: Excava
+  texto: Elige qué sala construir en cada hueco del hormiguero.
+- titulo: Cría
+  texto: Decide cuánto alimentas a cada larva. Más comida, casta más grande.
+- titulo: Asigna
+  texto: Pon a cada obrera en una sala. Ella decide cuándo trabajar, comer o descansar.
+- titulo: Cultiva
+  texto: Las hojas se convierten en hongo, y el hongo en comida.
+- titulo: Explora
+  texto: Manda expediciones a por hojas y presas.
+- titulo: Devora
+  texto: Cómete a otras hormigas para quedarte con sus genes.
+- titulo: Resiste
+  texto: Si la reina sigue viva al acabar el invierno, ganas.

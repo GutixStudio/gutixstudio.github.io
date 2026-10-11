@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'es' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- if page.title -%}
+  <title>{{ page.title }} · {{ site.title }}</title>
+  {%- else -%}
+  <title>{{ site.title }} · {{ site.estudio }}</title>
+  {%- endif %}
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ site.description | normalize_whitespace }}">
+  <meta property="og:image" content="{{ '/assets/img/salas/real.png' | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@600;800&family=Nunito:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body class="{{ page.clase }}">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="barra">
+    <a class="barra__marca" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="barra__nav" aria-label="Secciones">
+      <a href="{{ '/#juego' | relative_url }}">El juego</a>
+      <a href="{{ '/#genes' | relative_url }}">Genes</a>
+      <a href="{{ '/#salas' | relative_url }}">Salas</a>
+      <a href="{{ '/#equipo' | relative_url }}">Equipo</a>
+      <a href="{{ '/#diario' | relative_url }}">Diario</a>
+    </nav>
+    {%- assign itch = site.enlaces.itch_juego | default: site.enlaces.itch_estudio -%}
+    <a class="boton boton--itch barra__jugar" href="{{ itch }}">Jugar en itch.io</a>
+  </header>
+
+  <main id="contenido">
+    {{ content }}
+  </main>
+
+  <footer class="pie" id="contacto">
+    <div class="pie__dentro">
+      <h2 class="pie__titulo">Sigue la colonia</h2>
+      <p>Aquí contamos cómo avanza el desarrollo, gen a gen.</p>
+      {% include enlaces.html clase="redes--grandes" %}
+      <p class="pie__creditos">
+        {{ site.title }} es un proyecto de <strong>{{ site.estudio }}</strong> para la asignatura Juegos para Web y Redes Sociales,
+        Grado en Diseño y Desarrollo de Videojuegos, Universidad Rey Juan Carlos (2025-26).
+        Puedes leer el <a href="{{ site.enlaces.gdd }}">documento de diseño</a> y el <a href="{{ site.enlaces.codigo }}">código</a> en GitHub.
+      </p>
+    </div>
+  </footer>
+
+  <svg class="hormiga-guia" viewBox="0 0 48 80" aria-hidden="true" focusable="false">
+    <g class="patas patas--a" fill="none" stroke="#2B1D14" stroke-width="3" stroke-linecap="round">
+      <path d="M18 36 l-12 -8 l-4 -8"/><path d="M30 44 l12 2 l4 6"/><path d="M18 50 l-10 8 l-2 10"/>
+    </g>
+    <g class="patas patas--b" fill="none" stroke="#2B1D14" stroke-width="3" stroke-linecap="round">
+      <path d="M30 36 l12 -8 l4 -8"/><path d="M18 44 l-12 2 l-4 6"/><path d="M30 50 l10 8 l2 10"/>
+    </g>
+    <ellipse cx="24" cy="20" rx="11" ry="15" fill="#B8613A" stroke="#2B1D14" stroke-width="3"/>
+    <ellipse cx="24" cy="43" rx="7" ry="9" fill="#B8613A" stroke="#2B1D14" stroke-width="3"/>
+    <ellipse cx="24" cy="62" rx="9" ry="8" fill="#B8613A" stroke="#2B1D14" stroke-width="3"/>
+    <path d="M19 69 q-6 6 -10 10 M29 69 q6 6 10 10" fill="none" stroke="#2B1D14" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="20" cy="65" r="2.2" fill="#2B1D14"/><circle cx="28" cy="65" r="2.2" fill="#2B1D14"/>
+  </svg>
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Galería de salas. imagen = archivo en assets/img/salas/
+# Cuando haya capturas del juego, se pueden añadir a _data/galeria.yml
+
+- nombre: Sala Real
+  imagen: real.png
+  texto: Aquí vive la reina. Pone los huevos y devora a las mutantes para que todo su linaje herede sus genes.
+
+- nombre: Guardería
+  imagen: guarderia.png
+  texto: Huevo, larva, pupa y obrera. Lo que comas de larva decide tu casta.
+
+- nombre: Despensa
+  imagen: despensa.png
+  texto: Sin despensa no se come. Las obreras vienen aquí cuando el hambre aprieta.
+
+- nombre: Sala de hongos
+  imagen: hongos.png
+  texto: Las hojas de las expediciones se convierten en hongo, y el hongo en comida.
+
+- nombre: Zona por excavar
+  imagen: zona-vacia.png
+  texto: Tierra, arcilla o roca. Cuanto más hondo, más cuesta excavar.

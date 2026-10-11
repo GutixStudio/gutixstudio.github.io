@@ -1,0 +1,17 @@
+---
+layout: default
+clase: entrada-pagina
+---
+<div class="subsuelo subsuelo--entrada">
+  <div class="tunel" aria-hidden="true"></div>
+  <section class="estrato estrato--tierra">
+    <article class="camara camara--entrada">
+      <p class="entrada__volver"><a href="{{ '/#diario' | relative_url }}">Volver al diario</a></p>
+      <h1 class="entrada__titulo">{{ page.title }}</h1>
+      <p class="entrada__fecha"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%d/%m/%Y' }}</time></p>
+      <div class="entrada__cuerpo">
+        {{ content }}
+      </div>
+    </article>
+  </section>
+</div>

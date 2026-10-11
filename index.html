@@ -1,0 +1,208 @@
+---
+layout: default
+clase: portada
+---
+{%- assign e = site.enlaces -%}
+{%- assign itch = e.itch_juego | default: e.itch_estudio -%}
+
+<section class="superficie">
+  <div class="superficie__texto">
+    <p class="superficie__estudio">Un juego de {{ site.estudio }}</p>
+    <h1 class="titulo-juego">{{ site.title }}</h1>
+    <p class="superficie__pitch">
+      Dirige un hormiguero de Glotonas, hormigas que evolucionan comiéndose a otras criaturas… y a sí mismas.
+    </p>
+    <div class="superficie__acciones">
+      <a class="boton boton--itch" href="{{ itch }}">Jugar en itch.io</a>
+      <a class="boton boton--claro" href="{{ e.codigo }}">Ver el código</a>
+    </div>
+    <p class="superficie__version">
+      Versión {{ site.version_nombre | downcase }} <a href="{{ e.release }}">{{ site.version }}</a>.
+      Se juega en el navegador, en ordenador, tablet o móvil.
+    </p>
+  </div>
+
+  <div class="suelo">
+  <svg viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path d="M0 96 C220 88 420 104 610 92 C660 88 680 40 720 38 C760 40 780 88 830 92 C1020 104 1220 88 1440 96 V170 H0Z" fill="#8C6545"/>
+    <path d="M0 96 C220 88 420 104 610 92 C660 88 680 40 720 38 C760 40 780 88 830 92 C1020 104 1220 88 1440 96" fill="none" stroke="#2B1D14" stroke-width="4"/>
+    <g fill="none" stroke="#5E7A40" stroke-width="4" stroke-linecap="round">
+      <path d="M60 94 l-4 -18 M70 94 l6 -20 M80 95 l-2 -14"/>
+      <path d="M300 98 l-5 -20 M312 98 l3 -24 M322 98 l8 -16"/>
+      <path d="M520 95 l-6 -16 M532 94 l2 -22"/>
+      <path d="M900 96 l-3 -20 M910 97 l6 -18"/>
+      <path d="M1130 92 l-6 -22 M1142 92 l2 -18 M1152 93 l9 -16"/>
+      <path d="M1360 95 l-2 -20 M1372 96 l7 -16"/>
+    </g>
+  </svg>
+  <div class="suelo__boca" aria-hidden="true"></div>
+  </div>
+</section>
+
+<div class="subsuelo">
+  <div class="tunel" aria-hidden="true"></div>
+
+  <section class="estrato estrato--tierra">
+    <div class="fila" id="juego">
+      <div class="camara camara--izq">
+        <h2>Comer para evolucionar</h2>
+        <p>
+          Las Glotonas se quedan con los rasgos de lo que se comen. Excava salas, cría a tus obreras,
+          cultiva hongos y decide a quién devorar para que tu colonia herede las mejores mutaciones
+          antes de que llegue el invierno.
+        </p>
+        <p>
+          Es un juego de gestión de colonia con partidas cortas de roguelite: cada hormiguero evoluciona distinto.
+        </p>
+        <dl class="ficha">
+          <div><dt>Género</dt><dd>Gestión de colonia y roguelite</dd></div>
+          <div><dt>Partida</dt><dd>10–15 minutos</dd></div>
+          <div><dt>Plataforma</dt><dd>Navegador (WebGL)</dd></div>
+          <div><dt>Hecho con</dt><dd>Unity 6</dd></div>
+        </dl>
+      </div>
+      <figure class="hueco hueco--der">
+        <img src="{{ '/assets/img/salas/real.png' | relative_url }}" width="640" height="400" alt="Ilustración de la Sala Real: una cama con dosel y estandartes con corona, sobre fondo morado.">
+        <figcaption>La Sala Real, donde la reina devora a las mutantes.</figcaption>
+      </figure>
+    </div>
+
+    <div class="fila" id="bucle">
+      <figure class="hueco hueco--izq">
+        <img src="{{ '/assets/img/salas/guarderia.png' | relative_url }}" width="640" height="400" loading="lazy" alt="Ilustración de la Guardería: larvas sobre un lecho de hojas rosadas, con raíces en el techo.">
+        <figcaption>En la Guardería eliges la casta de cada larva.</figcaption>
+      </figure>
+      <div class="camara camara--der">
+        <h2>Cómo se juega</h2>
+        <ol class="bucle">
+          {%- for paso in site.data.bucle -%}
+          <li><strong>{{ paso.titulo }}.</strong> {{ paso.texto }}</li>
+          {%- endfor -%}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="estrato estrato--arcilla" id="genes">
+    <div class="fila fila--ancha">
+      <div class="camara camara--mutacion">
+        <h2>Mutar cuesta una hormiga</h2>
+        <div class="niveles">
+          <div>
+            <h3>Una obrera devora</h3>
+            <p>
+              Se come a otra hormiga o a una presa de expedición y se queda con uno de sus genes.
+              Una de cada cinco veces sale mal y gana una tara.
+            </p>
+          </div>
+          <div>
+            <h3>La reina devora</h3>
+            <p>
+              Los genes de la mutante, y sus taras, pasan a todas las crías futuras de su casta.
+              Partida a partida, cada casta acaba siendo distinta.
+            </p>
+          </div>
+        </div>
+        <ul class="genes">
+          {%- for gen in site.data.genes -%}
+          <li class="gen{% if gen.tara %} gen--tara{% endif %}">
+            {% include gen-icono.html icono=gen.icono %}
+            <div>
+              <h3 class="gen__nombre">{{ gen.nombre }}{% if gen.tara %} <span class="gen__tara">tara</span>{% endif %}</h3>
+              <p class="gen__origen">{{ gen.origen }}</p>
+              <p>{{ gen.efecto }}</p>
+            </div>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="estrato estrato--arcilla estrato--salas" id="salas">
+    <div class="fila fila--ancha">
+      <div class="cabecera-seccion">
+        <h2>Las salas</h2>
+        <p>Ilustraciones de las salas que ya están en la alfa. Toca una para verla en grande.</p>
+      </div>
+    </div>
+    <ul class="galeria">
+      {%- for sala in site.data.salas -%}
+      <li class="galeria__item">
+        <button class="galeria__boton" type="button" data-grande="{{ '/assets/img/salas/' | append: sala.imagen | relative_url }}" data-titulo="{{ sala.nombre }}" data-texto="{{ sala.texto }}">
+          <img src="{{ '/assets/img/salas/' | append: sala.imagen | relative_url }}" width="640" height="400" loading="lazy" alt="">
+          <span class="galeria__nombre">{{ sala.nombre }}</span>
+        </button>
+        <p>{{ sala.texto }}</p>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+
+  <section class="estrato estrato--roca" id="equipo">
+    <div class="fila fila--ancha">
+      <div class="cabecera-seccion">
+        <h2>Quiénes somos</h2>
+        <p>
+          {{ site.estudio }} somos seis estudiantes del Grado en Diseño y Desarrollo de Videojuegos de la URJC.
+          Abre una carta para ver qué hizo cada uno en la {{ site.version_nombre | downcase }}.
+        </p>
+      </div>
+    </div>
+    <ul class="equipo">
+      {%- for m in site.data.equipo -%}
+      <li>
+        <details class="carta">
+          <summary>
+            {% include avatar.html color=m.color cabeza=m.cabeza gen=m.gen %}
+            <span class="carta__nombre">{{ m.nombre }}</span>
+            <span class="carta__area">{{ m.area }}</span>
+          </summary>
+          <div class="carta__detalle">
+            <p>{{ m.alfa }}</p>
+            {%- if m.enlaces -%}
+            <p class="carta__enlaces">
+              {%- for enlace in m.enlaces -%}
+              {%- case enlace[0] -%}
+                {%- when "github" -%}{%- assign etiqueta = "GitHub" -%}
+                {%- when "x" -%}{%- assign etiqueta = "X" -%}
+                {%- when "linkedin" -%}{%- assign etiqueta = "LinkedIn" -%}
+                {%- else -%}{%- assign etiqueta = enlace[0] | capitalize -%}
+              {%- endcase -%}
+              <a href="{{ enlace[1] }}">{{ etiqueta }}</a>
+              {%- endfor -%}
+            </p>
+            {%- endif -%}
+          </div>
+        </details>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+
+  <section class="estrato estrato--roca-honda" id="diario">
+    <div class="fila fila--ancha">
+      <div class="camara camara--diario">
+        <h2>Diario de desarrollo</h2>
+        <ul class="diario">
+          {%- for post in site.posts -%}
+          <li>
+            <a href="{{ post.url | relative_url }}">
+              <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%d/%m/%Y' }}</time>
+              <span class="diario__titulo">{{ post.title }}</span>
+              <span class="diario__resumen">{{ post.resumen }}</span>
+            </a>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<dialog class="visor" aria-labelledby="visor-titulo">
+  <form method="dialog"><button class="visor__cerrar" type="submit">Cerrar</button></form>
+  <img class="visor__img" src="" alt="">
+  <h3 id="visor-titulo" class="visor__titulo"></h3>
+  <p class="visor__texto"></p>
+</dialog>

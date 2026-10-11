@@ -1,0 +1,16 @@
+<svg class="gen__icono" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+{%- case include.icono -%}
+{%- when "patas" -%}
+  <g fill="none" stroke="#2B1D14" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 20 l10 10 l-6 16 M30 18 l6 14 l-4 18 M46 20 l2 12 l8 14"/>
+  </g>
+  <path d="M8 54 h12 M40 56 h14" stroke="#8E5FA8" stroke-width="3" stroke-linecap="round"/>
+{%- when "mandibula" -%}
+  <path d="M30 12 q-22 6 -18 34 q4 -8 10 -8 l-4 -5 l6 -2 l-3 -6 l7 -2z" fill="#8E5FA8" stroke="#2B1D14" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M34 12 q22 6 18 34 q-4 -8 -10 -8 l4 -5 l-6 -2 l3 -6 l-7 -2z" fill="#8E5FA8" stroke="#2B1D14" stroke-width="3.5" stroke-linejoin="round"/>
+{%- else -%}
+  <ellipse cx="32" cy="36" rx="22" ry="18" fill="#C99A3B" stroke="#2B1D14" stroke-width="4"/>
+  <path d="M18 30 q14 6 28 0 M16 40 q16 6 32 0" fill="none" stroke="#2B1D14" stroke-width="3"/>
+  <ellipse cx="24" cy="26" rx="5" ry="3" fill="#fff" opacity=".45"/>
+{%- endcase -%}
+</svg>

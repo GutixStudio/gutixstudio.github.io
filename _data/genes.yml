@@ -1,0 +1,18 @@
+# Genes de la versión actual. icono → patas | mandibula | barriga
+# tara: true = mutación fallida
+
+- nombre: Patas de corredora
+  origen: Hormiga del desierto (Cataglyphis)
+  efecto: Corre un 50 % más rápido, pero se cansa antes.
+  icono: patas
+
+- nombre: Mandíbula cortadora
+  origen: Hormiga cortadora de hojas (Atta)
+  efecto: Un 30 % más de fuerza y carga una hoja más.
+  icono: mandibula
+
+- nombre: Glotona
+  origen: Mutación fallida
+  efecto: Tiene el doble de hambre y come doble ración.
+  icono: barriga
+  tara: true

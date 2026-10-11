@@ -1,0 +1,12 @@
+{%- assign e = site.enlaces -%}
+<ul class="redes {{ include.clase }}">
+  {%- if e.itch_juego != "" and e.itch_juego -%}
+  <li><a class="red red--itch" href="{{ e.itch_juego }}">itch.io</a></li>
+  {%- elsif e.itch_estudio != "" and e.itch_estudio -%}
+  <li><a class="red red--itch" href="{{ e.itch_estudio }}">itch.io</a></li>
+  {%- endif -%}
+  {%- if e.x != "" and e.x -%}<li><a class="red" href="{{ e.x }}">X</a></li>{%- endif -%}
+  {%- if e.youtube != "" and e.youtube -%}<li><a class="red" href="{{ e.youtube }}">YouTube</a></li>{%- endif -%}
+  {%- if e.github != "" and e.github -%}<li><a class="red" href="{{ e.github }}">GitHub</a></li>{%- endif -%}
+  {%- if e.linktree != "" and e.linktree -%}<li><a class="red" href="{{ e.linktree }}">Linktree</a></li>{%- endif -%}
+</ul>
